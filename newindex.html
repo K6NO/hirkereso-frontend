@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html amp lang="hu"></html>
+<head>
+    <meta charset="utf-8">
+    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Hírkereső</title>
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="FILL THIS OUT">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet" type="text/css">
+    <script async="" custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async="" custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+    <script async="" custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "headline": "Open-source framework for publishing content",
+    "datePublished": "2015-10-07T12:02:41Z",
+    "image": [
+    "logo.jpg"
+    ]
+    }
+  </script>
+    <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+        <style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+    </noscript>
+    <style amp-custom="">
+        /* any custom style goes here */
+        body {
+            font-family: 'roboto', sans-serif;
+            color: black;
+        }
+        .header-container{
+            background-color: #062F4F; /*ink*/
+            background: linear-gradient(#062F4F 80%, black);
+            border-bottom: solid 1px black;
+        }
+        header {
+            max-width: 950px;
+            margin: 0 auto;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+            padding: .3em 0 .1em .5em;
+        }
+        h1 a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 2px #000;
+            letter-spacing: 5px;
+            font-size: .7em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0 0 0 .9em;
+            margin: 0;
+        }
+        nav li {
+            text-align: center;
+            display: inline-block;
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            transition: .3s background-color;
+            border-radius: 1px;
+        }
+        nav a h2 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            font-family: 'Arial', sans-serif;
+            font-size: .8em;
+        }
+        nav a:hover {
+            background-color: #E24E42 /*mustard - rgba(233, 128, 0, .5)*/
+        }
+        nav a:active {
+            background-color: #E24E42; /*papaya*/
+            color: #fff;
+            cursor: default;
+        }
+        main {
+            padding-top: 10px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .feed-container {
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            justify-content: left;
+            margin-left: .5em;
+        }
+        .col {
+            width: 310px;
+        }
+        .feed-wrapper {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .feed-list-header-container {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: #008F95 ; /*aqua or papaya #E24E42*/
+        }
+        .feed-list-header {
+            margin: 0;
+            padding: .4em 0 .4em .4em;
+            color: white;
+            font-size: 1em;
+            letter-spacing: 5px;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 2px black;
+            border-bottom: 1px solid black;
+        }
+        .m1 {
+        }
+        .feed-item-title {
+            font-size: .9em;
+            text-decoration: none;
+            color: #95BAC7 /*lightgrey*/;
+        }
+        .feed-item {
+            background-color: #062F4F; /*ink*/
+            border-bottom: 1px solid #4484CE; /*aqua*/
+            padding: .4em .2em .4em .4em;
+            border-radius: 3px;
+        }
+        .feed-item:hover{
+        }
+        .feed-item-title:hover{
+            text-decoration: none;
+            color: white;
+        }
+        .list-overflow[overflow]{
+            position: absolute;
+            bottom: 0;
+            width: 305px;
+            background: #E24E42; /*papaya*/
+            background: linear-gradient(#062F4F 60%, white);
+            border-top: 1px #fff;
+            color : white;
+            font-size: 1em;
+            padding: .4em 0em .4em 1em;
+            text-shadow: 2px 2px 2px black;
+        }
+        .list-overflow[overflow]:hover{
+            color: #E24E42;
+        }
+        .footer-container {
+            background-color: #008F95; /*aqua*/
+        }
+        footer {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 10px 0 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer section a {
+            display: block;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 0 10px 0 20px;
+        }
+        footer section a:hover {
+            color: black;
+            transition: .5s background-color;
+        }
+        @media (min-width: 640px) {
+            footer section a {
+                display: inline;
+                border-left: solid 1px white;
+                border-right: solid 1px white;
+            }
+            .feed-container {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-flow: row wrap;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                margin-left: 0;
+            }
+            h1 {
+                margin: 0;
+                padding: .7em 0 .3em 1.1em;
+            }
+            h1 a {
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-shadow: 2px 2px 2px #000;
+                letter-spacing: 5px;
+                font-size: 1em;
+            }
+            nav li {
+                text-align: center;
+                display: inline-block;
+                width: 100px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 1.1em;
+            }
+            nav a {
+                text-decoration: none;
+                color: #fff;
+                display: block;
+                transition: .3s background-color;
+            }
+            nav a h2 {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+                font-family: 'Arial', sans-serif;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="header-container">
+        <header class="site-header">
+            <div class="title-row">
+                <h1><a href="/">Hírkereső</a></h1>
+            </div>
+            <div class="nav-row">
+                <nav>
+                    <ul>
+                        <li class="category"><a href="/">
+                            <h2>Főoldal</h2></a></li>
+                        <li class="category"><a href="/belfold">
+                            <h2>Belföld</h2></a></li>
+                        <li class="category"><a href="kulfold">
+                            <h2>Külföld</h2></a></li>
+                        <li class="category"><a href="bulvar">
+                            <h2>Bulvár</h2></a></li>
+                        <li class="category"><a href="sport">
+                            <h2>Sport</h2></a></li>
+                        <li class="category"><a href="tech">
+                            <h2>Tech</h2></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <main>
+        <div class="feed-container">
+            <div class="col">
+                <div class="feed-wrapper">
+                    <div class="feed-list-header-container">
+                        <h3 class="feed-list-header">feed.title</h3>
+                    </div>
+                    <div class="feed-list">
+                        <amp-list height="300" layout="fixed-height" src="/v0/api/feeds/">
+                            <template id="amp-template-id" type="amp-mustache">
+                                <div class="feed-item"><a href="url" target="_blank" class="feed-item-title">title</a></div>
+                            </template>
+                            <div overflow="" aria-label="Show more" class="list-overflow">...több feed.title hír</div>
+                        </amp-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="feed-wrapper">
+                    <div class="feed-list-header-container">
+                        <h3 class="feed-list-header">feed.title</h3>
+                    </div>
+                    <div class="feed-list">
+                        <amp-list height="300" width="310" layout="fixed" src="/v0/api/feeds/">
+                            <template id="amp-template-id" type="amp-mustache">
+                                <div class="feed-item"><a href="url" target="_blank" class="feed-item-title">title</a></div>
+                            </template>
+                            <div overflow="" aria-label="Show more" class="list-overflow">...több feed.title hír</div>
+                        </amp-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="feed-wrapper">
+                    <div class="feed-list-header-container">
+                        <h3 class="feed-list-header">feed.title</h3>
+                    </div>
+                    <div class="feed-list">
+                        <amp-list height="300" width="310" layout="fixed" src="/v0/api/feeds/">
+                            <template id="amp-template-id" type="amp-mustache">
+                                <div class="feed-item"><a href="url" target="_blank" class="feed-item-title">{{title}}</a></div>
+                            </template>
+                            <div overflow="" aria-label="Show more" class="list-overflow">...több feed.title hír</div>
+                        </amp-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div class="footer-container">
+    <footer>
+        <section class="contact"><a href="#" class="nav-bottom">Impresszum</a><a href="#" class="nav-bottom">Kapcsolat</a><a href="#" class="nav-bottom">Médiaajánlat</a></section>
+        <section class="poweredby"><a href="#">Powered by AMP</a></section>
+    </footer>
+</div>
+<amp-analytics type="googleanalytics" id="amp-analytics">
+    <script type="application/json">
+        {
+            "vars": {
+                "account": "{{ site.analytics_id }}"
+            },
+            "triggers": {
+                "trackPageview": {
+                    "on": "visible",
+                    "request": "pageview"
+                }
+            }
+        }
+    </script>
+</amp-analytics>
+</body>
